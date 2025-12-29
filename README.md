@@ -1,6 +1,15 @@
-Welcome :-
-yo, I'm Youssef Ahmed — Software Engineer & CS student
+# Welcome :-
 
-Connect with me:
-GitHub | LinkedIn | X
-Live Website: https://usefahmed07.github.io/
+# yo, I'm Youssef Ahmed — **Software Engineer & CS student**
+
+Connect with me:  
+[GitHub](https://github.com/usefahmed07 ) | 
+[LinkedIn](https://www.linkedin.com/in/youssef-ahmed-b13658290) | 
+[X](https://x.com/usif74)
+
+
+
+
+
+
+# Live Website: https://usefahmed07.github.io/
