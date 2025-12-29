@@ -11,17 +11,17 @@
 
     <style>
         :root {
-            --bg: #0e0e0e;
-            --text: #eaeaea;
-            --muted: #999;
-            --border: #222;
+            --bg: #2d2d2d;
+            --text: #c7c7c7;
+            --muted: #888888;
+            --border: #444444;
         }
 
         body.light {
             --bg: #ffffff;
-            --text: #111;
-            --muted: #555;
-            --border: #ddd;
+            --text: #111111;
+            --muted: #555555;
+            --border: #dddddd;
         }
 
         * {
@@ -216,7 +216,6 @@
 </div>
 
 <script>
-    // Theme toggle
     const toggle = document.getElementById("themeToggle");
     const icon = toggle.querySelector("i");
 
@@ -229,7 +228,6 @@
         }
     });
 
-    // Clock
     const clock = document.getElementById("clock");
     function updateClock() {
         const now = new Date();
