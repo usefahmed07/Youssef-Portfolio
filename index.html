@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Youssef Ahmed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Youssef Ahmed - Software Engineer & Computer Science Student">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #0e0e0e;
+            --text: #eaeaea;
+            --muted: #999;
+            --border: #222;
+        }
+
+        body.light {
+            --bg: #ffffff;
+            --text: #111;
+            --muted: #555;
+            --border: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--muted);
+            transition: color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--text);
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            max-width: 650px;
+        }
+
+        .socials {
+            margin-top: 25px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .socials a {
+            color: var(--muted);
+            font-size: 1.6rem;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--text);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <header>
+        <h1>Youssef Ahmed</h1>
+        <nav>
+            <a href="mailto:youssef.ahmed.hamaza@gmail.com">Email</a>
+            <a href="https://github.com/usefahmed07" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/youssef-ahmed-b13658290" target="_blank">LinkedIn</a>
+            <a href="https://x.com/usif74" target="_blank">X</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p>
+            Hi, I’m Youssef Ahmed, a Software Engineer & computer science student.
+            <br><br>
+              Feel empowered to be who you want to be.
+        </p>
+
+        <div class="socials">
+            <a href="https://github.com/usefahmed07" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/youssef-ahmed-b13658290" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/usif74" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:youssef.ahmed.hamaza@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2025 Youssef Ahmed</span>
+    </footer>
+
+</div>
+
+<script>
+    const toggle = document.getElementById("themeToggle");
+    const icon = toggle.querySelector("i");
+
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+
+        if (document.body.classList.contains("light")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+    });
+</script>
+
+</body>
+</html>
