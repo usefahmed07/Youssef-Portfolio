@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Youssef Ahmed</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Youssef Ahmed - Software Engineer & Computer Science Student">
 
     <!-- Icons -->
@@ -40,6 +39,7 @@
             justify-content: center;
             align-items: center;
             transition: background 0.3s, color 0.3s;
+            overflow-x: hidden;
         }
 
         .container {
@@ -58,10 +58,22 @@
             font-size: 1.2rem;
             color: var(--muted);
             transition: color 0.3s;
+            z-index: 2;
         }
 
         .theme-toggle:hover {
             color: var(--text);
+        }
+
+        /* Clock */
+        .clock {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: bold;
+            z-index: 2;
         }
 
         header {
@@ -69,9 +81,10 @@
         }
 
         header h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 10px;
+            animation: fadeInUp 2s ease;
         }
 
         nav a {
@@ -79,6 +92,23 @@
             text-decoration: none;
             color: var(--muted);
             font-size: 0.9rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -3px;
+            background: var(--text);
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         nav a:hover {
@@ -89,6 +119,8 @@
             font-size: 1.2rem;
             line-height: 1.7;
             max-width: 650px;
+            animation: fadeIn 2s ease forwards;
+            transform: translateZ(0);
         }
 
         .socials {
@@ -99,13 +131,16 @@
 
         .socials a {
             color: var(--muted);
-            font-size: 1.6rem;
-            transition: 0.3s;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .socials a:hover {
+            transform: scale(1.2) translateY(-3px);
             color: var(--text);
-            transform: translateY(-3px);
         }
 
         footer {
@@ -119,9 +154,19 @@
             flex-wrap: wrap;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
         @media (max-width: 600px) {
             header h1 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -130,6 +175,9 @@
 <body>
 
 <div class="container">
+
+    <!-- Clock -->
+    <div class="clock" id="clock"></div>
 
     <!-- Theme Toggle -->
     <div class="theme-toggle" id="themeToggle" title="Toggle theme">
@@ -150,7 +198,7 @@
         <p>
             Hi, I’m Youssef Ahmed, a Software Engineer & computer science student.
             <br><br>
-              Feel empowered to be who you want to be.
+            Feel empowered to be who you want to be.
         </p>
 
         <div class="socials">
@@ -168,20 +216,27 @@
 </div>
 
 <script>
+    // Theme toggle
     const toggle = document.getElementById("themeToggle");
     const icon = toggle.querySelector("i");
 
     toggle.addEventListener("click", () => {
         document.body.classList.toggle("light");
-
         if (document.body.classList.contains("light")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
+            icon.classList.replace("fa-moon", "fa-sun");
         } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
+            icon.classList.replace("fa-sun", "fa-moon");
         }
     });
+
+    // Clock
+    const clock = document.getElementById("clock");
+    function updateClock() {
+        const now = new Date();
+        clock.textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
 </script>
 
 </body>
