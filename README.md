@@ -1,4 +1,4 @@
-# Welcome :-
+# Welcome!
 
 # yo, I'm Youssef Ahmed — **Software Engineer & CS student**
 
