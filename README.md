@@ -7,7 +7,6 @@ Connect with me:
 [LinkedIn](https://www.linkedin.com/in/youssef-ahmed-b13658290) | 
 [X](https://x.com/usif74)
 
-# [My Resume}
 
 
 
